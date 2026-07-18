@@ -4,22 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StarScraper</title>
-    <link rel="stylesheet" href="src/style.css"/>
+    <link rel="stylesheet" type="text/css" href="src/style.css?version=#">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aaeff7cdd7.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- TODO first setup w/ api keys-->
-    <!-- TODO new tab w/ stardance things, favorites, search bar, weather  -->
-    <div class="center">
-        <p class="inter">testy mctestface</p>
+    <!-- TODO new tab w/ stardance things, favorites, weather  -->
+    <div id="main" class="center">
+        <p id="clock" class="inter clock">00:00:00</p>
+        <p id="date" class="inter date">Jan 1, 2026</p>
         <button id="searchbutton" class="searchbutton">
             <div class="searchbox">
-                <div id="cursor" class="inline blink"></div><div id="textbox" class="inline textbox">Search or enter address</div>
-                <input id="search" onfocus="" class="search inline" tabindex="-1">
+                <input id="search" class="search inline" tabindex="-1" placeholder="Search or enter address">
             </div>
         </button>
+        <div class="favorites">
+            <div class="favorite" style="opacity: 0; ">
+                <div class="favbox"></div>
+                <div class="trash"></div>
+            </div>
+            <div id="addfavorite" class="favorite">
+                <div class="addfavorite">
+                    <i class="fa-solid fa-plus" style="color: wheat;"></i>
+                </div>
+                <div></div>
+            </div>
+            <div class="favorite" style="opacity: 0; ">
+                <div class="favbox"></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div id="savepage" class="center" style="display: none; width: fit-content;">
+        <input id="name" class="favinput" tabindex="-1" placeholder="Name">
+        <br>
+        <input type="url" id="url" class="favinput" tabindex="-1" placeholder="URL (with https://)" pattern="^https?:\/\/(?:.*\.)?.*\.[a-zA-Z]*.*" required>
+        <br>
+        <p id="error1" class="inter" style="display: none;">Wrong URL given, make sure it starts with http(s)://!</p>
+        <p id="error2" class="inter" style="display: none;">Please fill both fields!</p>
+        <div class="grid">
+            <button class="buttons" onclick="window.location.reload()">Back</button>
+            <button class="buttons" id="save">Save</button>
+        </div>
     </div>
 </body>
 <script src="src/index.js"></script>

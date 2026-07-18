@@ -1,6 +1,6 @@
 # Images
 
-Images in this folder (marked with "CC" in the filename) are licensed under [CC BY-NC-SA][cc-by-nc-sa].
+Images in this folder that are marked with "CC" in the filename are licensed under [CC BY-NC-SA][cc-by-nc-sa].
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
 
