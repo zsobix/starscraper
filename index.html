@@ -11,8 +11,28 @@
     <script src="https://kit.fontawesome.com/aaeff7cdd7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- TODO first setup w/ api keys-->
-    <!-- TODO new tab w/ stardance things, favorites, weather  -->
+    <!-- TODO new tab w/ stardance things  -->
+    <div id="weather" class="weather inter">
+        <!-- <i class="fa-solid fa-cloud-sun"></i> 30.2°C (feels like 28.5°C), <br>
+        max 32.0°C, min 20.0°C<br>
+        <i class="fa-solid fa-wind"></i> 15.5 km/h from W<br>
+        <i class="fa-solid fa-cloud-rain"></i> 0.00 mm (approximately) -->
+        <i class="fa-solid fa-cloud-sun"></i> Waiting for geolocation... <br>
+        <br>
+        <br>
+    </div>
+    <div id="stardance" class="stardance inter">
+        <input id="starinput" class="starinput inline" placeholder="Stardance username (without @)">
+        <br>
+        <button class="starsave" id="starsave">Save</button>
+        <p id="error01" class="inter error" style="display: none;">Unknown username!</p>
+        <p id="error02" class="inter error" style="display: none;">Please fill the username field!</p>
+        <!-- <i class="fa-solid fa-star"></i> Stardance Stats:<br>
+        <i class="fa-solid fa-book"></i> Total devlogs: 10<br>
+        <i class="fa-solid fa-user-plus"></i> Total followers (across all projects): 1<br>
+        <i class="fa-regular fa-clock"></i> Total hours: 100 h -->
+
+    </div>
     <div id="main" class="center">
         <p id="clock" class="inter clock">00:00:00</p>
         <p id="date" class="inter date">Jan 1, 2026</p>
@@ -22,19 +42,23 @@
             </div>
         </button>
         <div class="favorites">
+            <div class="favorite" style="opacity: 0;">
+                <div class="favbox">
+                </div>
+            </div>
             <div class="favorite" style="opacity: 0; ">
                 <div class="favbox"></div>
-                <div class="trash"></div>
             </div>
             <div id="addfavorite" class="favorite">
                 <div class="addfavorite">
                     <i class="fa-solid fa-plus" style="color: wheat;"></i>
                 </div>
-                <div></div>
             </div>
             <div class="favorite" style="opacity: 0; ">
                 <div class="favbox"></div>
-                <div></div>
+            </div>
+            <div class="favorite" style="opacity: 0; ">
+                <div class="favbox"></div>
             </div>
         </div>
     </div>
@@ -42,9 +66,8 @@
         <input id="name" class="favinput" tabindex="-1" placeholder="Name">
         <br>
         <input type="url" id="url" class="favinput" tabindex="-1" placeholder="URL (with https://)" pattern="^https?:\/\/(?:.*\.)?.*\.[a-zA-Z]*.*" required>
-        <br>
-        <p id="error1" class="inter" style="display: none;">Wrong URL given, make sure it starts with http(s)://!</p>
-        <p id="error2" class="inter" style="display: none;">Please fill both fields!</p>
+        <p id="error1" class="inter error" style="display: none;">Wrong URL given, make sure it starts with http(s)://!</p>
+        <p id="error2" class="inter error" style="display: none;">Please fill the URL field!</p>
         <div class="grid">
             <button class="buttons" onclick="window.location.reload()">Back</button>
             <button class="buttons" id="save">Save</button>

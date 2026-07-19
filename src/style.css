@@ -5,6 +5,7 @@
 
 body {
     background-color: #1f1f28;
+    height: 90vh;
 }
 .center {
     position: fixed;
@@ -46,6 +47,7 @@ body {
 .search {
     height: 40px;
     width: 35dvw;
+    min-width: 400px;
     border-radius: 5dvh;
     background: hsl(0, 0%, 30%) url("../images/google.png") 16px center no-repeat;
     border-width: 3px;
@@ -99,7 +101,7 @@ body {
 
 .favorites {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     padding: 10px;
     justify-content: space-between;
 }
@@ -109,6 +111,7 @@ body {
 
 .favinput {
     border-radius: 5dvh;
+    width: 35dvw;
     background-color: hsl(0, 0%, 30%);
     border-width: 2px;
     border-style: solid;
@@ -174,10 +177,9 @@ body {
     border-width: 3px;
     border-color: #dcd7ba;
     transition: background-color 0.25s ease;
-    anchor-name: --favbox;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 800;
+    font-weight: 400;
     font-size: 30px;
     text-align: center;
 }
@@ -210,7 +212,7 @@ body {
 .favtext {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
     font-size: 14px;
     width: 100%;
@@ -220,4 +222,113 @@ body {
 }
 .favorite {
     width: fit-content;
+}
+
+.error {
+    margin: 5px;
+    width: 100%;
+    color: wheat;
+}
+
+#savepage {
+    width: min-content;
+}
+
+.stardance, .weather {
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    background-image: none;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #dcd7ba;
+    transition: background-color 0.25s ease;
+}
+
+.stardance {
+    float: right;
+    right: 0;
+    color: wheat;
+}
+
+.trash {
+    overflow: hidden;
+    opacity: 0;
+    height: 0;
+    transition: height 0ms 400ms, opacity 400ms 0ms;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #dcd7ba;
+    background-color: hsl(0, 0%, 30%);
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+}
+.favorite:hover .trash {
+    height: 20px;
+    opacity: 1;
+    transition: height 0ms 0ms, opacity 400ms 0ms;
+}
+.trash:hover {
+    height: 20px;
+    opacity: 1;
+    transition: height 0ms 0ms, opacity 400ms 0ms;
+}
+
+
+.weather {
+    color: wheat;
+    max-width: 240px;
+}
+
+.starinput {
+    height: 20px;
+    width: 20dvw;
+    border-radius: 5dvh;
+    background-color: hsl(0, 0%, 30%);
+    border-width: 3px;
+    border-style: dashed;
+    border-color: #dcd7ba;
+    font-size: 2.5vh;
+    padding: 5px;
+}
+
+.starinput::placeholder {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    text-align: center;
+}
+
+.starinput:focus {
+    outline: none;
+    border-style: solid;
+}
+
+.starsave{
+    width: 100%;
+    border-radius: 5dvh;
+    background-color: hsl(0, 0%, 30%);
+    border-width: 3px;
+    border-style: solid;
+    border-color: #dcd7ba;
+    color: wheat;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    margin-top: 10px;
+    padding: 5px;
+    transition: background-color 0.25s ease;
+}
+
+.starsave:hover{
+    background-color: hsl(0, 0%, 40%);
+    transition: background-color 0.25s ease;
 }
