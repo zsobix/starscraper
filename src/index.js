@@ -115,7 +115,7 @@ function error(err) {
     document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-sun"></i> ERROR:<br> Location usage denied,<br> or other error... <br>`
 }
 
-window.navigator.geolocation.getCurrentPosition(success, error)
+window.navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: false, timeout: 5000, maximumAge: Infinity})
 
 
 
