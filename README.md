@@ -2,7 +2,7 @@
 
 A custom new tab page, that can reach the stars!
 
-"insert picture here"
+<img width="1896" height="901" alt="260719_22h51m08s_screenshot" src="https://github.com/user-attachments/assets/debb0d69-0086-4715-aaf1-0cc2ee95825d" />
 
 ## Features
 
