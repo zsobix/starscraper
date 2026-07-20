@@ -24,6 +24,10 @@ if (localStorage.getItem("favorites") == "" || localStorage.getItem("favorites")
     var favorites = JSON.parse(localStorage.getItem("favorites"));
 }
 
+if (localStorage.getItem("search") == null) {
+    localStorage.setItem("search", "https://www.google.com/search?q=%s");
+}
+
 if (localStorage.getItem("username") != null) {
     var username = localStorage.getItem("username");
     console.log(username)
@@ -112,10 +116,10 @@ function success(pos) {
 }
 
 function error(err) {
-    document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-sun"></i> ERROR:<br> Location usage denied,<br> or other error... <br>`
+    document.getElementById("weather").innerHTML = `<i class="fa-solid fa-cloud-sun"></i> ERROR: <br> ${err.message} <br>`
 }
 
-window.navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: false, timeout: 5000, maximumAge: Infinity})
+window.navigator.geolocation.getCurrentPosition(success, error, {"maximumAge": Infinity, "timeout": 60000, "enableHighAccuracy": false}) 
 
 
 
@@ -129,7 +133,7 @@ const keyHandler = function keyHandler(e) {
                     window.location.href = input.value
                 }
             } else {
-                window.location.href = "https://www.google.com/search?q="+input.value
+                window.location.href = localStorage.getItem("search").replace("%s", input.value)
             }
         }
     }
@@ -152,7 +156,11 @@ setInterval(getClock, 1000)
 favorite.onclick = function(){
     document.getElementById("main").style.display = "none"
     document.getElementById("savepage").style.display = "block"
+}
 
+document.getElementById("settings").onclick = function(){
+    document.getElementById("main").style.display = "none"
+    document.getElementById("settingspage").style.display = "block"
 }
 
 document.getElementById("save").onclick = function() {
@@ -250,6 +258,25 @@ document.getElementById("starsave").onclick = function(){
             })
     }
 }
+
+document.getElementById("enginesave").onclick = function(){
+    var input = document.getElementById("engineinput")
+    if (input.value == "") {
+        document.getElementById("error12").style.display = "block"
+        document.getElementById("error11").style.display = "none"
+    } else if (!(input.checkValidity())) {
+        document.getElementById("error12").style.display = "none"
+        document.getElementById("error11").style.display = "block"
+    } else {
+        localStorage.setItem("search", input.value)
+        input.value = ""
+        window.location.reload()
+    }
+}
+
+document.getElementById("sengine").innerHTML = `Current search engine:<br> ${localStorage.getItem("search")}`
+
+
 
 input.addEventListener("focusout", reset)
 document.addEventListener("keyup", keyHandler)

@@ -17,7 +17,7 @@ body {
     border-width: 3px;
     border-style: solid;
     border-color: #dcd7ba;
-    padding: 50px;
+    padding: 30px;
 }
 
 .center p {
@@ -46,15 +46,15 @@ body {
 
 .search {
     height: 40px;
-    width: 35dvw;
+    width: 100%;
     min-width: 400px;
     border-radius: 5dvh;
-    background: hsl(0, 0%, 30%) url("../images/google.png") 16px center no-repeat;
+    background-color: hsl(0, 0%, 30%);
     border-width: 3px;
     border-style: dashed;
     border-color: #dcd7ba;
     font-size: 2.5vh;
-    padding-left: 55px;
+    padding-left: 20px;
 }
 
 .search::placeholder {
@@ -311,7 +311,7 @@ body {
     border-style: solid;
 }
 
-.starsave{
+.starsave, .settings{
     width: 100%;
     border-radius: 5dvh;
     background-color: hsl(0, 0%, 30%);
@@ -328,7 +328,7 @@ body {
     transition: background-color 0.25s ease;
 }
 
-.starsave:hover{
+.starsave:hover, .settings:hover{
     background-color: hsl(0, 0%, 40%);
     transition: background-color 0.25s ease;
 }
