@@ -76,16 +76,31 @@
             <button class="buttons" id="save">Save</button>
         </div>
     </div>
-    <div id="settingspage" class="center" style="display: none; width: fit-content;">
-        <p id="sengine" class="inter error" style="text-align: center;">Current search engine:<br> https://www.google.com/search?q=%s</p>
-        <input id="engineinput" class="favinput inline" tabindex="-1" placeholder="New search engine (with http(s):// and %s)" pattern="^https?:\/\/.*%s.*" required>
-        <br>
-        <!-- <input type="url" id="url" class="favinput" tabindex="-1" placeholder="URL (with https://)" pattern="^https?:\/\/(?:.*\.)?.*\.[a-zA-Z]*.*" required> -->
-        <p id="error11" class="inter error" style="display: none;">Wrong URL given, make sure it starts with http(s):// and ends with %s!</p>
-        <p id="error12" class="inter error" style="display: none;">Please fill the field!</p>
+    <div id="settingspage" class="center settingspage" style="display: none; width: fit-content;">
         <div class="grid">
-            <button class="buttons" onclick="window.location.reload()">Back</button>
-            <button class="buttons" id="enginesave">Save</button>
+            <div>
+                <p id="sengine" class="inter error" style="text-align: center;">Current search engine:<br> https://www.google.com/search?q=%s</p>
+                <input id="engineinput" class="favinput inline" tabindex="-1" placeholder="New search engine (with http(s):// and %s)" pattern="^https?:\/\/.*%s.*" required>
+                <br>
+                <!-- <input type="url" id="url" class="favinput" tabindex="-1" placeholder="URL (with https://)" pattern="^https?:\/\/(?:.*\.)?.*\.[a-zA-Z]*.*" required> -->
+                <p id="error11" class="inter error" style="display: none;">Wrong URL given, make sure it starts with http(s):// and ends with %s!</p>
+                <p id="error12" class="inter error" style="display: none;">Please fill the field!</p>
+                <div class="grid">
+                    <button class="buttons" onclick="window.location.reload()">Back</button>
+                    <button class="buttons" id="enginesave">Save</button>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <button id="theme" class="buttons" style="width: 100%;">Light mode</button>
+                <p class="inter error" style="text-align: center;">Primary color:</p>
+                <div id="primary" class="grid">
+                    <button id="wheat" class="buttons" style="margin: 5px; color: wheat;">Wheat</button>
+                    <button id="white" class="buttons" style="margin: 5px; color: white;">White</button>
+                    <button id="lblue" class="buttons" style="margin: 5px; color: lightblue;">Blue</button>
+                    <button id="pink" class="buttons" style="margin: 5px; color: pink;">Pink</button>
+                    <button id="black" class="buttons" style="margin: 5px; color: black;">Black</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

@@ -3,9 +3,13 @@
 	to { opacity: 0; }
 }
 
-body {
-    background-color: #1f1f28;
+:root {
+    --bg-color: #1f1f28;
+    background-color: var(--bg-color);
     height: 90vh;
+    --color: wheat;
+    --input-color: hsl(0, 0%, 30%);
+    --input-hover-color: hsl(0, 0%, 40%);
 }
 .center {
     position: fixed;
@@ -16,12 +20,12 @@ body {
     border-radius: 30px;
     border-width: 3px;
     border-style: solid;
-    border-color: #dcd7ba;
+    border-color: var(--color);
     padding: 30px;
 }
 
 .center p {
-    color: wheat;
+    color: var(--color);
 }
 
 .inter {
@@ -49,10 +53,10 @@ body {
     width: 100%;
     min-width: 400px;
     border-radius: 5dvh;
-    background-color: hsl(0, 0%, 30%);
+    background-color: var(--input-color);
     border-width: 3px;
     border-style: dashed;
-    border-color: #dcd7ba;
+    border-color: var(--color);
     font-size: 2.5vh;
     padding-left: 20px;
 }
@@ -111,11 +115,11 @@ body {
 
 .favinput {
     border-radius: 5dvh;
-    width: 35dvw;
-    background-color: hsl(0, 0%, 30%);
+    width: 450px;
+    background-color: var(--input-color);
     border-width: 2px;
     border-style: solid;
-    border-color: #dcd7ba;
+    border-color: var(--color);
     font-size: 2.5vh;
     margin: 10px;
     padding: 5px;
@@ -133,11 +137,11 @@ body {
 .buttons {
     width: 100%;
     border-radius: 5dvh;
-    background-color: hsl(0, 0%, 30%);
+    background-color: var(--input-color);
     border-width: 2px;
     border-style: solid;
-    border-color: #dcd7ba;
-    color: wheat;
+    border-color: var(--color);
+    color: var(--color);
     font-size: 16px;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -150,7 +154,7 @@ body {
 }
 
 .buttons:hover {
-    background-color: hsl(0, 0%, 40%);
+    background-color: var(--input-hover-color);
     transition: background-color 0.25s ease;
 }
 
@@ -165,7 +169,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: hsl(0, 0%, 30%);
+    background-color: var(--input-color);
     width: fit-content;
     height: fit-content;
     width: 55px;
@@ -175,7 +179,7 @@ body {
     border-radius: 10px;
     border-style: solid;
     border-width: 3px;
-    border-color: #dcd7ba;
+    border-color: var(--color);
     transition: background-color 0.25s ease;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -184,12 +188,12 @@ body {
     text-align: center;
 }
 .favbox:hover {
-    background-color: hsl(0, 0%, 40%);
+    background-color: var(--input-hover-color);
     transition: background-color 0.25s ease;
 }
 
 .addfavorite {
-    background-color: hsl(0, 0%, 30%);
+    background-color: var(--input-color);
     width: fit-content;
     height: fit-content;
     justify-self: center;
@@ -200,12 +204,12 @@ body {
     border-radius: 10px;
     border-style: solid;
     border-width: 3px;
-    border-color: #dcd7ba;
+    border-color: var(--color);
     transition: background-color 0.25s ease;
 }
 
 .addfavorite:hover {
-    background-color: hsl(0, 0%, 40%);
+    background-color: var(--input-hover-color);
     transition: background-color 0.25s ease;
 }
 
@@ -227,7 +231,7 @@ body {
 .error {
     margin: 5px;
     width: 100%;
-    color: wheat;
+    color: var(--color);
 }
 
 #savepage {
@@ -244,14 +248,14 @@ body {
     border-radius: 10px;
     border-style: solid;
     border-width: 3px;
-    border-color: #dcd7ba;
+    border-color: var(--color);
     transition: background-color 0.25s ease;
 }
 
 .stardance {
     float: right;
     right: 0;
-    color: wheat;
+    color: var(--color);
 }
 
 .trash {
@@ -262,8 +266,8 @@ body {
     border-radius: 10px;
     border-style: solid;
     border-width: 3px;
-    border-color: #dcd7ba;
-    background-color: hsl(0, 0%, 30%);
+    border-color: var(--color);
+    background-color: var(--input-color);
     padding: 5px;
     margin: 10px;
     text-align: center;
@@ -281,7 +285,7 @@ body {
 
 
 .weather {
-    color: wheat;
+    color: var(--color);
     max-width: 240px;
 }
 
@@ -289,10 +293,10 @@ body {
     height: 20px;
     width: 20dvw;
     border-radius: 5dvh;
-    background-color: hsl(0, 0%, 30%);
+    background-color: var(--input-color);
     border-width: 3px;
     border-style: dashed;
-    border-color: #dcd7ba;
+    border-color: var(--color);
     font-size: 2.5vh;
     padding: 5px;
 }
@@ -314,11 +318,11 @@ body {
 .starsave, .settings{
     width: 100%;
     border-radius: 5dvh;
-    background-color: hsl(0, 0%, 30%);
+    background-color: var(--input-color);
     border-width: 3px;
     border-style: solid;
-    border-color: #dcd7ba;
-    color: wheat;
+    border-color: var(--color);
+    color: var(--color);
     font-size: 16px;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -329,6 +333,10 @@ body {
 }
 
 .starsave:hover, .settings:hover{
-    background-color: hsl(0, 0%, 40%);
+    background-color: var(--input-hover-color);
     transition: background-color 0.25s ease;
+}
+
+.settingspage {
+    min-width: 900px;
 }

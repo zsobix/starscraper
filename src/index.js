@@ -28,6 +28,14 @@ if (localStorage.getItem("search") == null) {
     localStorage.setItem("search", "https://www.google.com/search?q=%s");
 }
 
+if (localStorage.getItem("color") == null) {
+    localStorage.setItem("color",  "wheat")
+    localStorage.setItem("bg-color",  "#1f1f28")
+    localStorage.setItem("input-color", "hsl(0, 0%, 30%)")
+    localStorage.setItem("input-hover-color", "hsl(0, 0%, 40%)")
+    localStorage.setItem("theme", "dark")
+}
+
 if (localStorage.getItem("username") != null) {
     var username = localStorage.getItem("username");
     console.log(username)
@@ -274,10 +282,66 @@ document.getElementById("enginesave").onclick = function(){
     }
 }
 
+
+document.getElementById("theme").onclick = function(){
+    if (localStorage.getItem("theme") == "dark") {
+        localStorage.setItem("color",  "black")
+        localStorage.setItem("bg-color",  "white")
+        localStorage.setItem("input-color", "hsl(0, 0%, 70%)")
+        localStorage.setItem("input-hover-color", "hsl(0, 0%, 60%)")
+        localStorage.setItem("theme", "light")
+    } else {
+        localStorage.setItem("color",  "wheat")
+        localStorage.setItem("bg-color",  "#1f1f28")
+        localStorage.setItem("input-color", "hsl(0, 0%, 30%)")
+        localStorage.setItem("input-hover-color", "hsl(0, 0%, 40%)")
+        localStorage.setItem("theme", "dark")
+    }
+    window.location.reload()
+}
+
 document.getElementById("sengine").innerHTML = `Current search engine:<br> ${localStorage.getItem("search")}`
-
-
-
 input.addEventListener("focusout", reset)
 document.addEventListener("keyup", keyHandler)
 document.addEventListener("keydown", keyHandler)
+
+
+if (localStorage.getItem("theme") == "dark") {
+    document.getElementById("primary").innerHTML = `<button id="wheat" class="buttons" style="margin: 5px; color: wheat;">Wheat</button>
+    <button id="white" class="buttons" style="margin: 5px; color: white;">White</button>
+    <button id="lblue" class="buttons" style="margin: 5px; color: lightblue;">Blue</button>
+    <button id="pink" class="buttons" style="margin: 5px; color: pink;">Pink</button>`
+    document.getElementById("theme").innerHTML = "Light mode"
+    document.getElementById("wheat").onclick = function(){
+        localStorage.setItem("color",  "wheat")
+        window.location.reload()
+    }
+    document.getElementById("white").onclick = function(){
+        localStorage.setItem("color",  "white")
+        window.location.reload()
+    }
+    document.getElementById("lblue").onclick = function(){
+        localStorage.setItem("color",  "lightblue")
+        window.location.reload()
+    }
+    document.getElementById("pink").onclick = function(){
+        localStorage.setItem("color",  "pink")
+        window.location.reload()
+    }
+    
+} else {
+    document.getElementById("primary").innerHTML = `<button id="black" class="buttons" style="margin: 5px; color: black;">Black</button>`
+    document.getElementById("theme").innerHTML = "Dark mode"
+
+    document.getElementById("black").onclick = function(){
+        localStorage.setItem("color",  "black")
+        window.location.reload()
+    }
+}
+
+
+
+document.documentElement.style.setProperty("--color", localStorage.getItem("color"));
+document.documentElement.style.setProperty("--bg-color", localStorage.getItem("bg-color"));
+document.documentElement.style.setProperty("--input-color", localStorage.getItem("input-color"));
+document.documentElement.style.setProperty("--input-hover-color", localStorage.getItem("input-hover-color"));
