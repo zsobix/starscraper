@@ -78,7 +78,7 @@
     </div>
     <div id="settingspage" class="center settingspage" style="display: none; width: fit-content;">
         <div class="grid">
-            <div>
+            <div style="margin: 10px;">
                 <p id="sengine" class="inter error" style="text-align: center;">Current search engine:<br> https://www.google.com/search?q=%s</p>
                 <input id="engineinput" class="favinput inline" tabindex="-1" placeholder="New search engine (with http(s):// and %s)" pattern="^https?:\/\/.*%s.*" required>
                 <br>
@@ -90,15 +90,18 @@
                     <button class="buttons" id="enginesave">Save</button>
                 </div>
             </div>
-            <div style="width: 100%;">
+            <br>
+            <div style="margin: 10px;">
+                <hr>
                 <button id="theme" class="buttons" style="width: 100%;">Light mode</button>
                 <p class="inter error" style="text-align: center;">Primary color:</p>
                 <div id="primary" class="grid">
-                    <button id="wheat" class="buttons" style="margin: 5px; color: wheat;">Wheat</button>
-                    <button id="white" class="buttons" style="margin: 5px; color: white;">White</button>
-                    <button id="lblue" class="buttons" style="margin: 5px; color: lightblue;">Blue</button>
-                    <button id="pink" class="buttons" style="margin: 5px; color: pink;">Pink</button>
-                    <button id="black" class="buttons" style="margin: 5px; color: black;">Black</button>
+                    <button id="wheat" class="wheat buttons">Wheat</button>
+                    <button id="white" class="white buttons">White</button>
+                    <button id="lblue" class="lblue buttons">Blue</button>
+                    <button id="pink" class="pink buttons">Pink</button>
+                    <button id="black" class="black buttons">Black</button>
+                    <button id="grey" class="dsgrey buttons">Grey</button>
                 </div>
             </div>
         </div>

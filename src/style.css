@@ -21,6 +21,7 @@
     border-width: 3px;
     border-style: solid;
     border-color: var(--color);
+    background-color: var(--bg-color);
     padding: 30px;
 }
 
@@ -337,6 +338,26 @@
     transition: background-color 0.25s ease;
 }
 
-.settingspage {
-    min-width: 900px;
+.wheat {
+    color: wheat;
+}
+
+.white {
+    color: white;
+}
+
+.lblue {
+    color: lightblue;
+}
+
+.pink {
+    color: pink;
+}
+
+.black {
+    color: black;
+}
+
+.dsgrey {
+    color: darkslategray;
 }

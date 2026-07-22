@@ -307,10 +307,10 @@ document.addEventListener("keydown", keyHandler)
 
 
 if (localStorage.getItem("theme") == "dark") {
-    document.getElementById("primary").innerHTML = `<button id="wheat" class="buttons" style="margin: 5px; color: wheat;">Wheat</button>
-    <button id="white" class="buttons" style="margin: 5px; color: white;">White</button>
-    <button id="lblue" class="buttons" style="margin: 5px; color: lightblue;">Blue</button>
-    <button id="pink" class="buttons" style="margin: 5px; color: pink;">Pink</button>`
+    document.getElementById("primary").innerHTML = `<button id="wheat" class="wheat buttons">Wheat</button>
+    <button id="white" class="white buttons">White</button>
+    <button id="lblue" class="lblue buttons">Blue</button>
+    <button id="pink" class="pink buttons">Pink</button>`
     document.getElementById("theme").innerHTML = "Light mode"
     document.getElementById("wheat").onclick = function(){
         localStorage.setItem("color",  "wheat")
@@ -330,16 +330,18 @@ if (localStorage.getItem("theme") == "dark") {
     }
     
 } else {
-    document.getElementById("primary").innerHTML = `<button id="black" class="buttons" style="margin: 5px; color: black;">Black</button>`
+    document.getElementById("primary").innerHTML = `<button id="black" class="black buttons">Black</button>
+    <button id="grey" class="dsgrey buttons">Grey</button>`
     document.getElementById("theme").innerHTML = "Dark mode"
-
     document.getElementById("black").onclick = function(){
         localStorage.setItem("color",  "black")
         window.location.reload()
     }
+    document.getElementById("grey").onclick = function(){
+        localStorage.setItem("color",  "darkslategray")
+        window.location.reload()
+    }
 }
-
-
 
 document.documentElement.style.setProperty("--color", localStorage.getItem("color"));
 document.documentElement.style.setProperty("--bg-color", localStorage.getItem("bg-color"));
